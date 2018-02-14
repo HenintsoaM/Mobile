@@ -1,0 +1,64 @@
+<ion-content>
+        <ion-header>
+                <ion-navbar>
+                </ion-navbar>               
+        </ion-header>
+ 
+    <div padding [@flyInBottomFast]="cloudState" id="cloud-layer">
+   
+      <ion-row>
+        <ion-col>
+          <img [@flyInBottomSlow]="logoState" src="assets/imgs/white.png" />
+        </ion-col>
+      </ion-row>
+   
+      <ion-row>
+        <ion-col>
+          <ion-list inset [@bounceInBottom]="formState">
+   
+            <ion-item>
+              <ion-label>First Name</ion-label>
+              <ion-input [(ngModel)]="nom" type="text"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Last Name</ion-label>
+                <ion-input [(ngModel)]="prenom" type="text"></ion-input>
+            </ion-item>
+
+              <ion-item>
+              <ion-label>Password</ion-label>
+              <ion-input [(ngModel)]="pass" type="password"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Gender</ion-label>
+              <ion-select [(ngModel)]="sexe">
+                <ion-option value="F">Female</ion-option>
+                <ion-option value="M">Male</ion-option>
+              </ion-select>
+            </ion-item>   
+
+            <ion-item>
+              <ion-label>Date</ion-label>
+              <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="date"></ion-datetime>
+            </ion-item>
+
+        <ion-item>
+          <ion-label>Ville</ion-label>
+          <ion-input type="text" [(ngModel)]="ville"></ion-input>
+        </ion-item>
+
+          </ion-list>
+        </ion-col>
+      </ion-row>
+   
+      <ion-row>
+        <ion-col>
+          <button ion-button round outline [@fadeIn]="loginState" (click)="insertInscri()">Signup</button>
+        </ion-col>
+      </ion-row>
+   
+    </div>
+   
+  </ion-content>

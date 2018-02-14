@@ -1,0 +1,82 @@
+
+<ion-content padding class="cacao">
+
+ <div class="hero">
+  <div class="container" >
+    <form class="find-location" >
+      <input type="text" [(ngModel)] ="city"  [ngModelOptions]="{standalone: true}" placeholder="Find your location..." >
+
+     <button ion-button block outline round type="submit" value="Find" (click)="getTemperature()">
+        Find
+      </button>
+    </form>
+    </div>    
+  </div>
+
+<br/>
+<br/>
+<div class="forecast-table">
+  <div class="container">
+    <div class="forecast-container">
+      <div class="today forecast">
+        <div class="forecast-header">
+          <div class="day">Monday</div>
+          <div class="date"> Oct</div>
+        </div> <!-- .forecast-header -->
+        <div class="forecast-content">
+          <h6 ion-text color="light">{{ temper.name }}</h6>
+          <div class="degree">
+            <div class="num">{{mai.temp}}<sup>o</sup>C</div>
+            <div class="forecast-icon">
+              <img src="http://openweathermap.org/img/w/{{temper.name}}.png" alt="" width=90>
+            </div>	
+          </div>
+          <span><img src="http://openweathermap.org/img/w/" alt=""></span>
+          <span><img src="./assets/images/icon-wind.png" alt=""></span>
+          <span><img src="./assets/images/icon-compass.png" alt=""></span>
+         </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+<div class="akanjo">
+
+    <ion-card>
+        <ion-card-content >
+            <ion-slides pager="false">               
+                <ion-slide *ngFor="let slide of top">
+          <img [src]="slide.image" />
+                </ion-slide>
+               
+              </ion-slides>
+          <ion-card-title>
+              <div class="icon"><ion-icon name="download"></ion-icon>
+                <ion-icon name="heart"></ion-icon></div>
+            </ion-card-title>
+          
+        </ion-card-content>
+      </ion-card>   
+      
+      <ion-card>
+          <ion-card-content >
+              <ion-slides pager="false">
+                  <ion-slide *ngFor="let bass of bottom">
+                    <img [src]="bass.image"/>
+                  </ion-slide>
+                </ion-slides>
+            <ion-card-title>
+              <h2 ion-text color="light"> Bas </h2>
+              </ion-card-title>
+            
+          </ion-card-content>
+        </ion-card>
+    
+      
+</div>
+
+
+
+
+</ion-content>
